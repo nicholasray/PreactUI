@@ -1,0 +1,55 @@
+body {
+	font-family: 'Helvetica Neue','Helvetica','Nimbus Sans L','Arial','Liberation Sans',sans-serif;
+	font-size: 100%;
+	line-height: 1.4;
+}
+
+.wrapper {
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 100px;
+}
+
+.todo-error input.oo-ui-inputWidget-input {
+	background-color: #ff9696;
+}
+
+.todo-list .oo-ui-optionWidget {
+	border-bottom: 1px solid #666;
+}
+
+.oo-ui-selectWidget-unpressed .oo-ui-optionWidget-selected {
+	background-color: #80ccff;
+}
+
+.oo-ui-optionWidget-highlighted {
+	background-color: #b9e3ff;
+}
+
+.oo-ui-inputWidget {
+	margin-bottom: 0.5em;
+}
+
+.todo-list .oo-ui-labelElement-label {
+	margin-left: 0.25em;
+}
+
+.oo-ui-labelElement .oo-ui-optionWidget {
+	padding: 0.25em;
+}
+
+.todo-itemWidget {
+	display: inline-table;
+}
+
+.todo-itemWidget.oo-ui-optionWidget.oo-ui-labelElement >
+.oo-ui-labelElement-label {
+	display: table-cell;
+	width: 100%;
+	padding: 0.5em;
+}
+
+.todo-itemWidget .oo-ui-buttonWidget {
+	display: table-cell;
+}

@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "postinstall": "npm run copyModules",
     "start": "webpack -w --mode=development",
     "build": "webpack --mode=production",
-    "postinstall": "cp -r node_modules packages"
+    "copyModules": "cp -r node_modules packages",
+    "predeploy": "npm run copyModules"
   },
   "author": "",
   "license": "ISC",

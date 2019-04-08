@@ -19,10 +19,6 @@ var ToDoItemWidget = function ( config ) {
 
 OO.inheritClass( ToDoItemWidget, OO.ui.OptionWidget );
 
-ToDoItemWidget.prototype.getCreationTime = function () {
-	return this.creationTime;
-};
-
 ToDoItemWidget.prototype.getPrettyCreationTime = function () {
 	var time = new Date( this.creationTime ),
 		hour = time.getHours(),

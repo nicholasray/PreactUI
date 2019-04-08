@@ -56,20 +56,17 @@ class ToDo extends preact.Component {
     e.target.value = '';
   }
 
-  handleItemDelete( itemToDelete, e ) {
-    // don't bubble up to item click handler
-    e.stopPropagation();
+  handleItemSelect( item ) {
+    this.setState( {
+      selected: item
+    } );
+  }
 
+  handleItemDelete( itemToDelete ) {
     this.setState( {
       items: this.state.items.filter( item => {
         return itemToDelete !== item;
       } )
-    } );
-  }
-
-  handleItemSelect( item ) {
-    this.setState( {
-      selected: item
     } );
   }
 
@@ -123,6 +120,7 @@ class ToDo extends preact.Component {
           { 
             this.state.items.map(item => 
               <ToDoItem
+                key={item.label}
                 item={item}
                 isSelected={this.state.selected === item}
                 onSelect={this.handleItemSelect}

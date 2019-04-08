@@ -2,7 +2,7 @@ $( function () {
 	var input = new OO.ui.TextInputWidget( {
 			placeholder: 'Add a ToDo item'
 		} ),
-		list = new ToDoListWidget( {
+		list = new OO.ui.SelectWidget( {
 			classes: [ 'todo-list' ]
 		} ),
 		info = new OO.ui.LabelWidget( {
@@ -20,11 +20,6 @@ $( function () {
 		}
 		input.$element.removeClass( 'todo-error' );
 
-		list.on( 'choose', function ( item ) {
-			info.setLabel( item.getData() + ' (' +
-				item.getPrettyCreationTime() + ')' );
-		} );
-
 		// Add the item
 		list.addItems( [
 			new ToDoItemWidget( {
@@ -33,7 +28,21 @@ $( function () {
 				creationTime: Date.now()
 			} )
 		] );
+
 		input.setValue( '' );
+	} );
+
+	list.aggregate( {
+		delete: 'itemDelete'
+	} );
+
+	list.on( 'choose', function ( item ) {
+		info.setLabel( item.getData() + ' (' +
+			item.getPrettyCreationTime() + ')' );
+	} );
+
+	list.on( 'itemDelete', function ( itemWidget ) {
+		list.removeItems( [ itemWidget ] );
 	} );
 
 	// Append the app widgets

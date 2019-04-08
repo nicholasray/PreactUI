@@ -1,7 +1,7 @@
 import preact from 'preact';
-import ToDoListWidget from './ToDoListWidget';
+import ToDoItem from './ToDoItem';
 
-class ToDo extends preact.Component {
+class ToDoList extends preact.Component {
   constructor() {
     super();
 
@@ -12,6 +12,8 @@ class ToDo extends preact.Component {
     };
 
     this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.handleItemDelete = this.handleItemDelete.bind(this);
+    this.handleItemSelect = this.handleItemSelect.bind(this);
   }
 
   isNewItemValid( newItem ) {
@@ -54,25 +56,21 @@ class ToDo extends preact.Component {
     e.target.value = '';
   }
 
-  newHandleDelete( itemToDelete ) {
-    return function( e ) {
-      // don't bubble up to item click handler
-      e.stopPropagation();
+  handleItemDelete( itemToDelete, e ) {
+    // don't bubble up to item click handler
+    e.stopPropagation();
 
-      this.setState( {
-        items: this.state.items.filter( item => {
-          return itemToDelete !== item;
-        } )
-      } );
-    }.bind(this);
+    this.setState( {
+      items: this.state.items.filter( item => {
+        return itemToDelete !== item;
+      } )
+    } );
   }
 
-  newHandleItemClick( item ) {
-    return function () {
-      this.setState( {
-        selected: item
-      } );
-    }.bind(this);
+  handleItemSelect( item ) {
+    this.setState( {
+      selected: item
+    } );
   }
 
   convertToPrettyTime( creationTime ) {
@@ -124,16 +122,12 @@ class ToDo extends preact.Component {
         <div className="ToDo__list">
           { 
             this.state.items.map(item => 
-              <div 
-                onClick={ this.newHandleItemClick( item ) }
-                key={ item.label } 
-                className={ this.state.selected === item ? 
-                    "ToDo__item ToDo__item--selected" : "ToDo__item" 
-                }
-              >
-                <span className="ToDo__item-label">{ item.label }</span>
-                <button onClick={ this.newHandleDelete( item ) } className="Button">Delete</button>
-              </div>
+              <ToDoItem
+                item={item}
+                isSelected={this.state.selected === item}
+                onSelect={this.handleItemSelect}
+                onDelete={this.handleItemDelete}
+              />
             ) 
           }
         </div>
@@ -153,4 +147,4 @@ class ToDo extends preact.Component {
 }
 
 // Render an instance of ToDoListWidget into preact-container
-preact.render(<ToDo />, document.getElementById('preact-container'));
+preact.render(<ToDoList />, document.getElementById('preact-container'));

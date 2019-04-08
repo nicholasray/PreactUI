@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack -w --mode=development",
     "build": "webpack --mode=production",
-    "predeploy": "cp -r node_modules packages"
+    "postinstall": "cp -r node_modules packages"
   },
   "author": "",
   "license": "ISC",

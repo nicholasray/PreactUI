@@ -19,8 +19,13 @@ var ToDoItemWidget = function ( config ) {
 
 OO.inheritClass( ToDoItemWidget, OO.ui.OptionWidget );
 
+ToDoItemWidget.prototype.onDeleteButtonClick = function () {
+	this.emit( 'delete' );
+};
+
 ToDoItemWidget.prototype.getPrettyCreationTime = function () {
-	var time = new Date( this.creationTime ),
+	var 
+		time = new Date( this.creationTime ),
 		hour = time.getHours(),
 		minute = time.getMinutes(),
 		second = time.getSeconds(),
@@ -46,14 +51,11 @@ ToDoItemWidget.prototype.getPrettyCreationTime = function () {
 	temp += ( ( minute < 10 ) ? ':0' : ':' ) + minute;
 	temp += ( ( second < 10 ) ? ':0' : ':' ) + second;
 	temp += ( hour >= 12 ) ? ' P.M.' : ' A.M.';
+
 	return [
 		time.getDate(),
 		monthNames[ time.getMonth() ],
 		time.getFullYear() + ', ',
 		temp
 	].join( ' ' );
-};
-
-ToDoItemWidget.prototype.onDeleteButtonClick = function () {
-	this.emit( 'delete' );
 };

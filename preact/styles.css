@@ -1,0 +1,103 @@
+.Input {
+  display: block;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #000;
+  margin: 0;
+  border: 1px solid #a2a9b1;
+  border-radius: 2px;
+  padding: .42857143em .57142857em;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: 1.28571429em;
+  height: 2.28571429em;
+  box-shadow: inset 0 0 0 1px transparent;
+  -webkit-transition: border-color 250ms,box-shadow 250ms;
+  -moz-transition: border-color 250ms,box-shadow 250ms;
+  transition: border-color 250ms,box-shadow 250ms;
+  -webkit-appearance: none;
+  margin-bottom: 0.5em;
+}
+
+.Input:focus {
+  outline: 0;
+  border-color: #36c;
+  box-shadow: inset 0 0 0 1px #36c;
+}
+
+.Input--error {
+  background-color: #ff9696;
+}
+
+.ToDo__list {
+  border: 1px solid #333;
+}
+
+.ToDo__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.ToDo__item:not( :last-child ) {
+  border-bottom: 1px solid #666;
+}
+
+.ToDo__item:hover {
+  background-color: #b9e3ff;
+}
+
+.ToDo__item--selected {
+  /* !important is needed to override hover color */
+  background-color: #80ccff !important;
+}
+
+.ToDo__item-label {
+  padding: 0.5em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.Button {
+  background-color: #f8f9fa;
+  color: #222;
+  border-color: #a2a9b1;
+  padding-top: .42857143em;
+  padding-bottom: .42857143em;
+  -webkit-transition: background-color .1s,color .1s,border-color .1s,box-shadow .1s;
+  -moz-transition: background-color .1s,color .1s,border-color .1s,box-shadow .1s;
+  transition: background-color .1s,color .1s,border-color .1s,box-shadow .1s;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 2px;
+  padding-left: 1.10714286em;
+  padding-right: .85714286em;
+  position: relative;
+  border-radius: 2px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  white-space: nowrap;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.28571429em;
+}
+
+.Button:hover {
+  background-color: #fff;
+  color: #444;
+  border-color: #a2a9b1;
+}

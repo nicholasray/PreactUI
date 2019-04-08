@@ -16,12 +16,17 @@
 		<script src="node_modules/oojs-ui/dist/oojs-ui-wikimediaui.min.js"></script>
 		<link rel="stylesheet" href="node_modules/oojs-ui/dist/oojs-ui-wikimediaui.min.css">
 
-		<!-- ToDo app custom -->
-		<link rel="stylesheet" href="todo.css">
+		<!-- base styles that both ooui todo and preact todo use -->
+		<link rel="stylesheet" href="base.css">
+
+		<!-- OOUI ToDo -->
+		<link rel="stylesheet" href="ooui/styles.css">
 		<script src="ooui/ToDoItemWidget.js"></script>
 		<script src="ooui/ToDoListWidget.js"></script>
-		<script src="ooui/init.js"></script>
+		<script src="ooui/index.js"></script>
 
+		<!-- Preact ToDo styles -->
+		<link rel="stylesheet" href="preact/styles.css">
 	</head>
 	<body>
 		<div class="wrapper" id="ooui-container">
@@ -31,7 +36,7 @@
 			<h1>Demo ToDo app with Preact</h1>
 			<div id="preact-container"></div>
 		</div>
-		<!--ToDo Preact -->
+		<!--Preact ToDo JS -->
 		<script src="preact/build.js"></script>
 	</body>
 </html>

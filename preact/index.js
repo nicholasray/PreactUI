@@ -116,7 +116,7 @@ class ToDo extends preact.Component {
           placeholder="Add a ToDo item" 
           onKeyPress={this.handleKeyPress} 
         />
-        <div className="ToDo__list">
+        <div className="ToDo__list" role="listbox">
           { 
             this.state.items.map(item => 
               <ToDoItem

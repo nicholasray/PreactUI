@@ -6,10 +6,10 @@ export default function ToDoItem( { item, onSelect, onDelete, isSelected }) {
       onClick={ ( e ) => onSelect( item, e ) }
       key={ item.label } 
       className={ isSelected ? 
-          "ToDo__item ToDo__item--selected" : "ToDo__item" 
+          "ToDoItem ToDoItem--selected" : "ToDoItem" 
       }
     >
-      <span className="ToDo__item-label">{ item.label }</span>
+      <span className="ToDoItem__label">{ item.label }</span>
       <button onClick={ ( e ) => onDelete( item, e ) } className="Button">Delete</button>
     </div>
   );

@@ -35,27 +35,27 @@
   border: 1px solid #333;
 }
 
-.ToDo__item {
+.ToDoItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
 }
 
-.ToDo__item:not( :last-child ) {
+.ToDoItem:not( :last-child ) {
   border-bottom: 1px solid #666;
 }
 
-.ToDo__item:hover {
+.ToDoItem:hover {
   background-color: #b9e3ff;
 }
 
-.ToDo__item--selected {
+.ToDoItem--selected {
   /* !important is needed to override hover color */
   background-color: #80ccff !important;
 }
 
-.ToDo__item-label {
+.ToDoItem__label {
   padding: 0.5em;
   white-space: nowrap;
   text-overflow: ellipsis;

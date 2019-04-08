@@ -1,7 +1,7 @@
 import preact from 'preact';
 import ToDoItem from './ToDoItem';
 
-class ToDoList extends preact.Component {
+class ToDo extends preact.Component {
   constructor() {
     super();
 
@@ -147,4 +147,4 @@ class ToDoList extends preact.Component {
 }
 
 // Render an instance of ToDoListWidget into preact-container
-preact.render(<ToDoList />, document.getElementById('preact-container'));
+preact.render(<ToDo />, document.getElementById('preact-container'));
